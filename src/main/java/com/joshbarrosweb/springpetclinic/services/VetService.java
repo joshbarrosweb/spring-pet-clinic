@@ -4,7 +4,7 @@ import com.joshbarrosweb.springpetclinic.entity.Vet;
 
 import java.util.Set;
 
-public interface VerService {
+public interface VetService {
 
     Vet findById(Long id);
 
