@@ -12,7 +12,7 @@ public class DataInitializer implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
-    
+
     public DataInitializer(OwnerService ownerService, VetService vetService) {
 
         this.ownerService = ownerService;
@@ -30,9 +30,9 @@ public class DataInitializer implements CommandLineRunner {
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner1.setId(2L);
-        owner1.setFirstName("Naty");
-        owner1.setLastName("Barros");
+        owner2.setId(2L);
+        owner2.setFirstName("Naty");
+        owner2.setLastName("Barros");
 
         ownerService.save(owner2);
 
