@@ -1,6 +1,6 @@
-package com.joshbarrosweb.springpetclinic.entity;
+package com.joshbarrosweb.springpetclinic.entities;
 
-public class PetType {
+public class PetType extends Base {
 
     private String name;
 

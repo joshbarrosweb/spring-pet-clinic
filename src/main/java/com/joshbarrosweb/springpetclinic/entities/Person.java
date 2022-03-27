@@ -1,6 +1,6 @@
-package com.joshbarrosweb.springpetclinic.entity;
+package com.joshbarrosweb.springpetclinic.entities;
 
-public class Person {
+public class Person extends Base {
     private String firstName;
     private String lastName;
 

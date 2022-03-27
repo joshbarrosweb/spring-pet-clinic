@@ -1,16 +1,9 @@
 package com.joshbarrosweb.springpetclinic.services;
 
-import com.joshbarrosweb.springpetclinic.entity.Owner;
+import com.joshbarrosweb.springpetclinic.entities.Owner;
 
-import java.util.Set;
+public interface OwnerService extends CrudService<Owner, Long> {
 
-public interface OwnerService {
-
-    Owner findbyLastName(String lastName);
-
-    Owner findById(Long id);
-
-    Owner save(Owner owner);
-
-    Set<Owner> findAll();
+    Owner findByLastName(String lastName);
+    
 }

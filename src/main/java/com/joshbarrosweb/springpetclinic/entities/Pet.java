@@ -1,8 +1,8 @@
-package com.joshbarrosweb.springpetclinic.entity;
+package com.joshbarrosweb.springpetclinic.entities;
 
 import java.time.LocalDate;
 
-public class Pet {
+public class Pet extends Base {
 
     private PetType petType;
     private Owner owner;
