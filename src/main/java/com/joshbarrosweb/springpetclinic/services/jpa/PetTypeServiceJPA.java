@@ -48,7 +48,7 @@ public class PetTypeServiceJPA implements PetTypeService {
     public void delete(PetType object) {
 
         petTypeRepository.delete(object);
-        
+
     }
 
     @Override
