@@ -1,10 +1,7 @@
 package com.joshbarrosweb.springpetclinic.bootstrap;
 
 import com.joshbarrosweb.springpetclinic.entities.*;
-import com.joshbarrosweb.springpetclinic.services.OwnerService;
-import com.joshbarrosweb.springpetclinic.services.PetTypeService;
-import com.joshbarrosweb.springpetclinic.services.SpecialtyService;
-import com.joshbarrosweb.springpetclinic.services.VetService;
+import com.joshbarrosweb.springpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,13 +14,15 @@ public class DataInitializer implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
 
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -88,6 +87,13 @@ public class DataInitializer implements CommandLineRunner {
         owner2.getPets().add(natyPet);
 
         ownerService.save(owner2);
+
+        Visit dogVisit = new Visit();
+        dogVisit.setPet(natyPet);
+        dogVisit.setDate(LocalDate.now());
+        dogVisit.setDescription("Barking Dog");
+
+        visitService.save(dogVisit);
 
         System.out.println("Loaded Owners...");
 
